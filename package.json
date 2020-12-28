@@ -26,7 +26,8 @@
     "appId": "net.makitokatsube.app.sample.log",
     "files": [
       "package.json",
-      "public/"
+      "public/",
+      "index.js"
     ],
     "mac": {
       "target": "dmg"
