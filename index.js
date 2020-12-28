@@ -1,6 +1,36 @@
 const { app, BrowserWindow } = require('electron')
+const log = require('electron-log')
+const fs = require('fs')
+
+log.info('start electron');
 
 let mainWin;
+
+// ログファイル名を変更
+/*
+(() => {
+  const d = new Date();
+  const prefix = d.getFullYear() +
+                 ('00' + (d.getMonth() + 1)).slice(-2) +
+                 ('00' + (d.getDate())).slice(-2);
+
+  const curr = log.transports.file.fileName;
+  log.transports.file.fileName = `${prefix}_${curr}`;
+})();
+*/
+
+// 例外を捕捉する
+/*
+(() => {
+  process.on('uncaughtException', (err) => {
+    log.error(process.pid, err);
+    app.quit();
+  });
+})();
+
+// 例外をわざと起こす
+buff = fs.readFileSync('foobar.txt')
+*/
 
 /**
  * ウィンドウを作成する
@@ -17,6 +47,7 @@ function createWindow () {
 
   // ファイルを開く
   mainWin.loadFile('public/index.html')
+  log.info({status:true, code:200, message:'open windows'});
 }
 
 // 初期化が終了したらウィンドウを新規に作成する

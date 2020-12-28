@@ -1,7 +1,7 @@
 # Electron Sample - log
-
+electron-logでログをファイルに記録する簡単なサンプルです。
 ## 解説ページ
-* []()
+* [[Electron] ログをファイルに記録する – electron-log](https://blog.katsubemakito.net/nodejs/electron/electron-log)
 
 ## 準備
 Gitでリポジトリを取得します。
