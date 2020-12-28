@@ -1,0 +1,42 @@
+{
+  "name": "electron-sample-log",
+  "version": "1.0.0",
+  "description": "electron sample - log",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build-mac": "electron-builder --mac --x64",
+    "build-win": "electron-builder --win --x64"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katsube/electron-sample-log.git"
+  },
+  "author": "M.Katsube",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/katsube/electron-sample-log/issues"
+  },
+  "homepage": "https://github.com/katsube/electron-sample-log#readme",
+  "devDependencies": {
+    "electron": "^11.1.1",
+    "electron-builder": "^22.9.1"
+  },
+  "build": {
+    "appId": "net.makitokatsube.app.sample.log",
+    "files": [
+      "package.json",
+      "public/"
+    ],
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
